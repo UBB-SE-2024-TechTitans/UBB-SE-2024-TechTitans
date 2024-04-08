@@ -4,16 +4,51 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:custom="clr-namespace:TechTitans.Views.Components" 
+             xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.UserPage"
              Title="UserPage">
-    
-    <VerticalStackLayout>
-        <!--exemplu-->
-        <custom:BackHomeButton />
-        <Label 
-            Text="User Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="StartAndExpand">
+            <custom:BackHomeButton />
+            <!--exemplu-->
+            <ListView ItemsSource="{Binding Songs}" 
+                      VerticalOptions="CenterAndExpand"
+                      HorizontalOptions="CenterAndExpand"
+                      RowHeight="170">
+                <!-- the list with the songs (if anyone needs to see how the songs are printed)-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell  >
+                            <Grid Padding="10" >
+                            
+                                
+                                <Image Source="{Binding ImageUrl}"
+                                       Grid.Column="0"
+                                          Grid.Row="0"
+                                           HeightRequest="100"
+                                           WidthRequest="80"
+                                       HorizontalOptions="Start"
+                                       VerticalOptions="Start"
+                                           />
+                                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding TitleName}"
+                                         FontAttributes="Bold"
+                                               FontSize="30"
+                                       HorizontalOptions="Center"/>
+                                <Label Margin="2,35,6,0" Grid.Row="1" Grid.Column="1"
+                       Text="{Binding ArtistName}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start"
+                                          FontSize="25"
+                                               TextColor="#666666"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

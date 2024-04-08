@@ -11,9 +11,9 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         Repository = new TestRepository();
-        var dbData = Repository.TestMethod();
+/*        var dbData = Repository.TestMethod();
         TestId.Text = dbData.Id.ToString();
-        TestName.Text = dbData.Name;
+        TestName.Text = dbData.Name;*/
 
     }
 
