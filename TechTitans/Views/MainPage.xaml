@@ -36,6 +36,12 @@
                 Clicked="OnAnalystClicked"
                 HorizontalOptions="Fill"
             />
+            <Button
+                x:Name="EndOfYearRecapBtn"
+                Text="End Of Year Recap View"
+                Clicked="OnEndOfYearRecapClicked"
+                HorizontalOptions="Fill"
+            />
             <Label
                 x:Name="TestId"
                 Text="test label test"

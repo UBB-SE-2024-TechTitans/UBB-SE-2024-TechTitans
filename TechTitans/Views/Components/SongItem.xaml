@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TechTitans.Views.Components.SongItem">
+             x:Class="TechTitans.Views.Components.SongItem"
+             >
     <HorizontalStackLayout>
         <Image
-            Source="song_img_default.png"
+            Source="{Binding Image}"
             HeightRequest="64"
             Aspect="AspectFit"
         />
         <VerticalStackLayout Padding="10,0">
             <Label 
-                Text="Song Title"
+                Text="{Binding Name}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="24"
             />
             <Label
-                Text="Artist name"
+                Text="{Binding Artist}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start"
                 FontSize="16"
             />
-
-
         </VerticalStackLayout>
-        
-
     </HorizontalStackLayout>
 </ContentView>
