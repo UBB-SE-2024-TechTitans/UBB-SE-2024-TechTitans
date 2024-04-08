@@ -6,6 +6,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.UserPage"
+             xmlns:local="clr-namespace:TechTitans.Views"
+             x:DataType="local:UserPage"
              Title="UserPage">
 
     <ScrollView>
