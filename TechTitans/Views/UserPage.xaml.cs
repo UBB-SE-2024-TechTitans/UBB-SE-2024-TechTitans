@@ -1,64 +1,68 @@
-using Microsoft.VisualStudio.PlatformUI;
-using System.Collections.ObjectModel;
+namespace TechTitans.Views;
+using TechTitans.Views.Components.User;
+using TechTitans.Views.Components;
 using TechTitans.Models;
-
-namespace TechTitans.Views
-{
 
     public partial class UserPage : ContentPage
     {
 
-        public ObservableCollection<Song> Songs { get; set; } = new ObservableCollection<Song> { };
-        public ObservableCollection<Playlist> Playlists { get; set; } = new ObservableCollection<Playlist> { };
         public UserPage()
         {
             InitializeComponent();
-            // Set the BindingContext
-            BindingContext = this;
-            PopulateSongs();
-            PopulatePlaylis();
-
+            LoadSongs();
         }
-        private void PopulateSongs()
+        private void LoadSongs()
         {
-            //here we should make multiple functions that regarding what you select on filter or write in the search bar
-            //populates the list with the first n songs (decision for later in beckend)
-            // Create Song instances 
-            //for now we use Song class only for frontend dev
-            Song song1 = new()
-            {
-                TitleName = "Song 1",
-                ArtistName = "Artist 1",
-                ImageUrl = "song_img_default.png" // Add image URL if needed
-            };
+            var songs = GetSongs(); // Get your list of songs from somewhere (e.g., database, API, local storage)
 
-            Song song2 = new()
+            // Loop through each song and dynamically create SongItem controls
+            int rowIndex = 0;
+            int columnIndex = 0;
+            foreach (var song in songs)
             {
-                TitleName = "Song 2",
-                ArtistName = "Artist 2",
-                ImageUrl = "song_img_default.png" // Add image URL if needed
-            };
+                var songItem = new SongItem(); // Create a new instance of SongItem
+                songItem.BindingContext = song; // Set the song as the binding context of the SongItem
+                songItem.Margin = new Thickness(0, 5, 0, 5); // Set margin as needed
 
-            // Add songs to the Songs collection
-            Songs.Add(song1);
-            Songs.Add(song2);
+                // Add TapGestureRecognizer to handle tap event
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += SongItem_Tapped;
+                songItem.GestureRecognizers.Add(tapGestureRecognizer);
+
+                // Set the row and column of the SongItem in the grid
+                Grid.SetRow(songItem, rowIndex);
+                Grid.SetColumn(songItem, columnIndex);
+                // Add the SongItem to the grid
+                SongsGrid.Children.Add(songItem);
+                columnIndex++;
+                if (columnIndex == 2)
+                {
+                    columnIndex = 0;
+                    rowIndex++;
+                }
+            }
         }
-        private void PopulatePlaylis()
-        {
-            //here is the same situation from the songs, most recently played playlist, etc
-            Playlist playlist1 = new()
-            {
-                TitleName = "title 1",
-                ImageUrl = "song_img_default.png"
-            };
-            Playlist playlist2 = new()
-            {
-                TitleName = "title 2",
-                ImageUrl = "song_img_default.png"
-            };
-            Playlists.Add(playlist1);
-            Playlists.Add(playlist2);
-        }
-        
+    private void SongItem_Tapped(object sender, System.EventArgs e)
+    {
+        // open ArtistSongDashboard page with song details
+        var songItem = (SongItem)sender;
+        var songInfo = songItem.BindingContext as SongBasicInfo;
+        Navigation.PushAsync(new UserSongDashboard(songInfo));
     }
+
+    private List<SongBasicInfo> GetSongs()
+    {
+        // mocked songs, to be replaced with actual data retrieval from db
+        return new List<SongBasicInfo>
+            {
+                new SongBasicInfo { SongId = 0, Name = "Song 1", Artist = "Artist 1", Image = "song_img_default.png" },
+                new SongBasicInfo { SongId = 1, Name = "Song 2", Artist = "Artist 2", Image = "song_img_default.png" },
+                new SongBasicInfo { SongId = 2, Name = "Song 3", Artist = "Artist 3", Image = "song_img_default.png" },
+                new SongBasicInfo { SongId = 3, Name = "Song 4", Artist = "Artist 4", Image = "song_img_default.png" },
+                new SongBasicInfo { SongId = 4, Name = "Song 5", Artist = "Artist 5", Image = "song_img_default.png" },
+                new SongBasicInfo { SongId = 5, Name = "Song 6", Artist = "Artist 6", Image = "song_img_default.png" },
+            };
+    }
+
 }
+

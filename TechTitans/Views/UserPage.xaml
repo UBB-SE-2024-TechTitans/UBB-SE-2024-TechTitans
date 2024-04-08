@@ -6,51 +6,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.UserPage"
-             xmlns:local="clr-namespace:TechTitans.Views"
-             x:DataType="local:UserPage"
              Title="UserPage">
 
     <ScrollView>
-        <VerticalStackLayout HorizontalOptions="CenterAndExpand"
-                             VerticalOptions="StartAndExpand">
+        <VerticalStackLayout>
             <custom:BackHomeButton />
-            <!--exemplu-->
-            <ListView ItemsSource="{Binding Songs}" 
-                      VerticalOptions="CenterAndExpand"
-                      HorizontalOptions="CenterAndExpand"
-                      RowHeight="170">
-                <!-- the list with the songs (if anyone needs to see how the songs are printed)-->
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell  >
-                            <Grid Padding="10" >
-                            
-                                
-                                <Image Source="{Binding ImageUrl}"
-                                       Grid.Column="0"
-                                          Grid.Row="0"
-                                           HeightRequest="100"
-                                           WidthRequest="80"
-                                       HorizontalOptions="Start"
-                                       VerticalOptions="Start"
-                                           />
-                                <Label Grid.Row="0" Grid.Column="1"
-                       Text="{Binding TitleName}"
-                                         FontAttributes="Bold"
-                                               FontSize="30"
-                                       HorizontalOptions="Center"/>
-                                <Label Margin="2,35,6,0" Grid.Row="1" Grid.Column="1"
-                       Text="{Binding ArtistName}"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Start"
-                                          FontSize="25"
-                                               TextColor="#666666"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
+            <Label 
+        Text="Your Most Listened Songs"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" 
+        Margin="10,0,0,0"
+    />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
