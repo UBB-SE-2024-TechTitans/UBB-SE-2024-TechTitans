@@ -44,7 +44,7 @@
             />
             <Label
                 x:Name="TestId"
-                Text=""
+                Text="test label test"
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1"
             />
