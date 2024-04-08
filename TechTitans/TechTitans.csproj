@@ -88,6 +88,9 @@
 	  <MauiXaml Update="Views\ArtistPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Components\Artist\ArtistSongDashboard.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\BackHomeButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
