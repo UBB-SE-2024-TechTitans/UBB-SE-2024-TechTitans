@@ -7,7 +7,6 @@
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.UserPage"
              Title="UserPage">
-
     <ScrollView>
         <VerticalStackLayout>
             <custom:BackHomeButton />
@@ -16,7 +15,7 @@
         VerticalOptions="Center" 
         HorizontalOptions="Start" 
         Margin="10,0,0,0"
-    />
+            />
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsGrid">
                     <Grid.RowDefinitions>
@@ -30,6 +29,45 @@
                     </Grid.ColumnDefinitions>
                 </Grid>
             </VerticalStackLayout>
+            <Label 
+        Text="Recommended Songs"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" 
+        Margin="10,0,0,0"
+            />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsRecommandationGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
+            <Label 
+            Text="Advertised Songs"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" 
+            Margin="10,0,0,0"
+                />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsAdvertisedGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
         </VerticalStackLayout>
+
     </ScrollView>
 </ContentPage>

@@ -9,12 +9,45 @@ using TechTitans.Models;
         public UserPage()
         {
             InitializeComponent();
-            LoadSongs();
+            LoadSongs(); //here we load the most recently played songs
+            LoadSongRecommandation(); //here we load song recommandation
+            LoadAdvertisedSongs(); //here we load song advertised
         }
-        private void LoadSongs()
-        {
-            var songs = GetSongs(); // Get your list of songs from somewhere (e.g., database, API, local storage)
+    private void LoadSongs()
+    {
+        var songs = GetSongs(); // Get your list of most recently played songs from somewhere (e.g., database, API, local storage)
 
+        // Loop through each song and dynamically create SongItem controls
+        int rowIndex = 0;
+        int columnIndex = 0;
+        foreach (var song in songs)
+        {
+            var songItem = new SongItem(); // Create a new instance of SongItem
+            songItem.BindingContext = song; // Set the song as the binding context of the SongItem
+            songItem.Margin = new Thickness(0, 5, 0, 5); // Set margin as needed
+
+            // Add TapGestureRecognizer to handle tap event
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += SongItem_Tapped;
+            songItem.GestureRecognizers.Add(tapGestureRecognizer);
+
+            // Set the row and column of the SongItem in the grid
+            Grid.SetRow(songItem, rowIndex);
+            Grid.SetColumn(songItem, columnIndex);
+            // Add the SongItem to the grid
+            SongsGrid.Children.Add(songItem);
+            columnIndex++;
+            if (columnIndex == 2)
+            {
+                columnIndex = 0;
+                rowIndex++;
+            }
+        }
+    }
+        private void LoadSongRecommandation()
+        {
+            var songs = GetSongs(); // Get your list of recommended songs from somewhere (e.g., database, API, local storage)
+            //for now we use the same mock function for retreving songs for frontend building purposes
             // Loop through each song and dynamically create SongItem controls
             int rowIndex = 0;
             int columnIndex = 0;
@@ -33,7 +66,7 @@ using TechTitans.Models;
                 Grid.SetRow(songItem, rowIndex);
                 Grid.SetColumn(songItem, columnIndex);
                 // Add the SongItem to the grid
-                SongsGrid.Children.Add(songItem);
+                SongsAdvertisedGrid.Children.Add(songItem);
                 columnIndex++;
                 if (columnIndex == 2)
                 {
@@ -42,6 +75,41 @@ using TechTitans.Models;
                 }
             }
         }
+    private void LoadAdvertisedSongs()
+    {
+        var songs = GetSongs(); // Get your list of recommended songs from somewhere (e.g., database, API, local storage)
+                                //for now we use the same mock function for retreving songs for frontend building purposes
+                                //note: we will need multiple sql commands for retriving different type of recommandations
+                                // Loop through each song and dynamically create SongItem controls
+        int rowIndex = 0;
+        int columnIndex = 0;
+        foreach (var song in songs)
+        {
+            var songItem = new SongItem(); // Create a new instance of SongItem
+            songItem.BindingContext = song; // Set the song as the binding context of the SongItem
+            songItem.Margin = new Thickness(0, 5, 0, 5); // Set margin as needed
+
+            // Add TapGestureRecognizer to handle tap event
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += SongItem_Tapped;
+            songItem.GestureRecognizers.Add(tapGestureRecognizer);
+
+            // Set the row and column of the SongItem in the grid
+            Grid.SetRow(songItem, rowIndex);
+            Grid.SetColumn(songItem, columnIndex);
+            // Add the SongItem to the grid
+            SongsRecommandationGrid.Children.Add(songItem);
+            columnIndex++;
+            if (columnIndex == 2)
+            {
+                columnIndex = 0;
+                rowIndex++;
+            }
+        }
+    }
+
+
+
     private void SongItem_Tapped(object sender, System.EventArgs e)
     {
         // open ArtistSongDashboard page with song details
