@@ -7,7 +7,6 @@
              x:Class="TechTitans.Views.ArtistPage"
              Title="Welcome DummyArtist69!">
     <VerticalStackLayout>
-        <custom:BackHomeButton />
         <Label 
             Text="Your Top Songs"
             VerticalOptions="Center" 
