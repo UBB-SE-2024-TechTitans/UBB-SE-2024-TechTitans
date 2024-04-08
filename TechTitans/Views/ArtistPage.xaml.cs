@@ -15,6 +15,10 @@ public partial class ArtistPage : ContentPage
     {
         var songs = GetSongs(); // Get your list of songs from somewhere (e.g., database, API, local storage)
 
+        // initial row
+        SongsGrid.RowDefinitions.Add(new RowDefinition());
+
+
         // Loop through each song and dynamically create SongItem controls
         int rowIndex = 0;
         int columnIndex = 0;
@@ -35,10 +39,11 @@ public partial class ArtistPage : ContentPage
             // Add the SongItem to the grid
             SongsGrid.Children.Add(songItem);
             columnIndex++;
-            if (columnIndex == 2)
+            if (columnIndex == 2) // bun cod
             {
                 columnIndex = 0;
                 rowIndex++;
+                SongsGrid.RowDefinitions.Add(new RowDefinition());
             }
         }
     }
@@ -56,14 +61,71 @@ public partial class ArtistPage : ContentPage
     {
         // mocked songs, to be replaced with actual data retrieval from db
         return new List<SongBasicInfo>
+        {
+            new SongBasicInfo
             {
-                new SongBasicInfo { SongId = 0, Name = "Song 1", Artist = "Artist 1", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 1, Name = "Song 2", Artist = "Artist 2", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 2, Name = "Song 3", Artist = "Artist 3", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 3, Name = "Song 4", Artist = "Artist 4", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 4, Name = "Song 5", Artist = "Artist 5", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 5, Name = "Song 6", Artist = "Artist 6", Image = "song_img_default.png" },
-            };
+                SongId = 0,
+                Name = "Song 1",
+                Artist = "Artist 1",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 1,
+                Name = "Song 2",
+                Artist = "Artist 2",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 2,
+                Name = "Song 3",
+                Artist = "Artist 3",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 3,
+                Name = "Song 4",
+                Artist = "Artist 4",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 4,
+                Name = "Song 5",
+                Artist = "Artist 5",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 5,
+                Name = "Song 6",
+                Artist = "Artist 6",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 6,
+                Name = "Song 7",
+                Artist = "Artist 7",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 7,
+                Name = "Song 8",
+                Artist = "Artist 8",
+                Image = "song_img_default.png"
+            },
+            new SongBasicInfo
+            {
+                SongId = 8,
+                Name = "Song 9",
+                Artist = "Artist 9",
+                Image = "song_img_default.png"
+            },
+        };
     }
 
 }

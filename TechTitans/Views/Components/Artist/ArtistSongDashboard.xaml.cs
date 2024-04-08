@@ -16,7 +16,7 @@ public partial class ArtistSongDashboard : ContentPage
 
 	private void LoadPage()
 	{
-		Console.WriteLine(song);
+		SongImage.Source = song.Image;
 		SongTitle.Text = song.Name;
 		SongArtist.Text = song.Artist;
 	}
