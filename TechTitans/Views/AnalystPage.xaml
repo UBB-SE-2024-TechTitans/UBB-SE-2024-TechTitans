@@ -9,7 +9,7 @@
     <VerticalStackLayout>
         <custom:BackHomeButton />
         <Label 
-            Text="ANALyst page!"
+            Text="Analyst page!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" 
         />
