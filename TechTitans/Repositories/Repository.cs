@@ -17,7 +17,7 @@ namespace TechTitans.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected IDbConnection _connection;
+        public IDbConnection _connection;
         private readonly IConfiguration _configuration = MauiProgram.Configuration;
 
         public Repository()
