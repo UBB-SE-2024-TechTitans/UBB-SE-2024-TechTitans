@@ -7,7 +7,6 @@
              x:Class="TechTitans.Views.ArtistPage"
              Title="Welcome DummyArtist69!">
     <VerticalStackLayout>
-        <custom:BackHomeButton />
         <Label 
             Text="Your Top Songs"
             VerticalOptions="Center" 
@@ -16,11 +15,11 @@
         />
         <VerticalStackLayout Spacing="15" Padding="10, 0">
             <Grid x:Name="SongsGrid">
-                <Grid.RowDefinitions>
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                </Grid.RowDefinitions>-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />

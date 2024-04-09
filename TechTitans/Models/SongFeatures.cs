@@ -13,9 +13,9 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; }
+        public int Song_Id { get; set; }
         [Key]
         [Column("artist_id")]
-        public int ArtistId { get; set; }
+        public int Artist_Id { get; set; }
     }
 }

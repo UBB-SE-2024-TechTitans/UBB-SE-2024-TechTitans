@@ -30,10 +30,10 @@ public partial class MainPage : ContentPage
         // TestId.Text = dbDataDemographic.UserId.ToString();
         // TestName.Text = dbDataDemographic.Name;
 
-        //RepositoryAuthorDetails = new TestAuthorDetails();
-/*        var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
-        TestId.Text = dbDataAuthorDetails.ArtistId.ToString();
-        TestName.Text = dbDataAuthorDetails.Name;*/
+        RepositoryAuthorDetails = new TestAuthorDetails();
+        var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
+        TestId.Text = dbDataAuthorDetails.Artist_Id.ToString();
+        TestName.Text = dbDataAuthorDetails.Name;
 
         // RepositorySongBasicDetails = new TestSongBasicDetails();
         // var dbDataSongBasicDetails = RepositorySongBasicDetails.TestMethod();
@@ -68,10 +68,10 @@ public partial class MainPage : ContentPage
 
     }
 
-    private void OnUserCLicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new UserPage());
-    private void OnArtistClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new ArtistPage());
-    private void OnAnalystClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new AnalystPage());
-    private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new EndOfYearRecap());
+    private void OnUserCLicked(object sender, EventArgs e) => Navigation.PushAsync(new UserPage());
+    private void OnArtistClicked(object sender, EventArgs e) => Navigation.PushAsync(new ArtistPage());
+    private void OnAnalystClicked(object sender, EventArgs e) => Navigation.PushAsync(new AnalystPage());
+    private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Navigation.PushAsync(new EndOfYearRecap());
 }
 
 

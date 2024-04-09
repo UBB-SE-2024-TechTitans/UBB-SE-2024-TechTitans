@@ -7,7 +7,6 @@
              x:Class="TechTitans.Views.AnalystPage"
              Title="AnalystPage">
     <VerticalStackLayout>
-        <custom:BackHomeButton />
         <Label 
             Text="Analyst page!"
             VerticalOptions="Center" 

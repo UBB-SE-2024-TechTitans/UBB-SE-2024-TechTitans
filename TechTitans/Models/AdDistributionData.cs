@@ -13,11 +13,11 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; }
+        public int Song_Id { get; set; }
 
         [Key]
         [Column("ad_campaign")]
-        public int AdCampaign { get; set; }
+        public int Ad_Campaign { get; set; }
 
         [Column("genre")]
         public string Genre { get; set; }

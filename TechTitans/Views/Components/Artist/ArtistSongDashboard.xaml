@@ -5,18 +5,15 @@
              x:Class="TechTitans.Views.Components.Artist.ArtistSongDashboard"
              Title="Song Dashboard">
     <VerticalStackLayout>
-        <!--take song title from Binding context-->
         <Label 
             x:Name="SongTitle"
             Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
+            HorizontalOptions="Start"
         />
         <Label
             x:Name="SongArtist"
             Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center"
+            HorizontalOptions="Start"
         />
     </VerticalStackLayout>
 </ContentPage>

@@ -13,7 +13,7 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; }
+        public int Song_Id { get; set; }
 
         [Column("name")]
         public string Name { get; set; }
@@ -25,7 +25,7 @@ namespace TechTitans.Models
         public string Subgenre { get; set; }
 
         [Column("artist_id")]
-        public int ArtistId { get; set; }
+        public int Artist_Id { get; set; }
 
         [Column("language")]
         public string Language { get; set; }
