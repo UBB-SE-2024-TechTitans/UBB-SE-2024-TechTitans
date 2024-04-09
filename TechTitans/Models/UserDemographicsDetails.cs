@@ -22,7 +22,7 @@ namespace TechTitans.Models
         public int Gender { get; set; }
 
         [Column("date_of_birth")]
-        public DateTime Date_O_fBirth { get; set; }
+        public DateTime Date_Of_fBirth { get; set; }
 
         [Column("country")]
         public string Country { get; set; }

@@ -6,11 +6,123 @@
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.AnalystPage"
              Title="AnalystPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Analyst page!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-        />
+    <VerticalStackLayout> 
+        <StackLayout Orientation="Horizontal">
+            <StackLayout Padding="10">
+                <Picker Title="Select Month:" x:Name="MonthPicker" SelectedIndex="0" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>4</x:Int32>
+                            <x:Int32>5</x:Int32>
+                            <x:Int32>6</x:Int32>
+                            <x:Int32>7</x:Int32>
+                            <x:Int32>8</x:Int32>
+                            <x:Int32>9</x:Int32>
+                            <x:Int32>10</x:Int32>
+                            <x:Int32>11</x:Int32>
+                            <x:Int32>12</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+
+            <StackLayout Padding="10">
+                <Picker Title="Select Year:" x:Name="YearPicker" SelectedIndex="0" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:Int32}">
+                            <x:Int32>2020</x:Int32>
+                            <x:Int32>2021</x:Int32>
+                            <x:Int32>2022</x:Int32>
+                            <x:Int32>2023</x:Int32>
+                            <x:Int32>2024</x:Int32>
+                            <x:Int32>2025</x:Int32>
+                            <x:Int32>2026</x:Int32>
+                            <x:Int32>2027</x:Int32>
+                            <x:Int32>2028</x:Int32>
+                            <x:Int32>2029</x:Int32>
+                            <x:Int32>2030</x:Int32>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+
+
+
+
+        <StackLayout Margin="15,0,0,0" Orientation="Horizontal" Spacing="150">
+            <!-- First row -->
+            <StackLayout x:Name="Top3Genres">
+                <Label Text="Top 3 Genres" FontSize="30"/>
+
+                <StackLayout Orientation="Horizontal" Spacing="50">
+                    <Label Text="Genre" FontSize="20"/>
+                    <Label Text="Total Listens" FontSize="20"/>
+                    <Label Text="Percentage" FontSize="20"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Genre1Name" />
+                    <Label x:Name="Genre1Minutes" />
+                    <Label x:Name="Percentage1"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Genre2Name" />
+                    <Label x:Name="Genre2Minutes" />
+                    <Label x:Name="Percentage2"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Genre3Name" />
+                    <Label x:Name="Genre3Minutes" />
+                    <Label x:Name="Percentage3"/>
+
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="15,0,0,0">
+
+
+                <Label Text="Top 3 Subgenres" FontSize="30"/>
+
+
+                <StackLayout Orientation="Horizontal" Spacing="50">
+                    <Label Text="Genre" FontSize="20"/>
+                    <Label Text="Total Listens" FontSize="20"/>
+                    <Label Text="Percentage" FontSize="20"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Subgenre1Name" />
+                    <Label x:Name="Subgenre1Minutes" />
+                    <Label x:Name="Subgenre1Percentage"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Subgenre2Name" />
+                    <Label x:Name="Subgenre2Minutes" />
+                    <Label x:Name="Subgenre2Percentage"/>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="100">
+                    <Label x:Name="Subgenre3Name" />
+                    <Label x:Name="Subgenre3Minutes" />
+                    <Label x:Name="Subgenre3Percentage"/>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+        
+       
+        <StackLayout Margin="15,50,0,0" AnchorX="20">
+            <Button Text="Show Top 3s" WidthRequest="150" HeightRequest="150" Clicked="OnShowTop3Clicked" HorizontalOptions="Start"/>
+        </StackLayout>
     </VerticalStackLayout>
+    
 </ContentPage>

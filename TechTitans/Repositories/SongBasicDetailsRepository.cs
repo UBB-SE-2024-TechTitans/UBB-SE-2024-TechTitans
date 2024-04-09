@@ -62,16 +62,16 @@ namespace TechTitans.Repositories
         public Tuple<string, decimal> GetMostPlayedArtistPercentile(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT TOP 1 sd.artist_id as ArtistId, COUNT(*) AS StartListenEvents FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sd ON ub.song_id = sd.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY sd.artist_id ORDER BY COUNT(*) DESC;");
+            cmd.Append("SELECT TOP 1 sd.artist_id as Artist_Id, COUNT(*) AS Start_Listen_Events FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sd ON ub.song_id = sd.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY sd.artist_id ORDER BY COUNT(*) DESC;");
             var response = _connection.Query<MostPlayedArtistInfo>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artistId");
-            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { response.ArtistId }).FirstOrDefault();
+            cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artist_Id");
+            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { response.Artist_Id }).FirstOrDefault();
             cmd.Clear();
             cmd.Append("SELECT COUNT(*) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE());");
             var totalSongs = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)response.StartListenEvents / totalSongs);
+            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)response.Start_Listen_Events / totalSongs);
         }
 
         public List<string> GetTop5Genres(int userId)

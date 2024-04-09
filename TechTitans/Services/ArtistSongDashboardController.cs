@@ -97,8 +97,9 @@ namespace TechTitans.Services
                     return songDetails;
                 }
             }
-            return new SongRecommendationDetails();
 
+            return new SongRecommendationDetails();
+            
         }
 
         //gets artist info by song id
@@ -167,9 +168,5 @@ namespace TechTitans.Services
             }
             return songs;
         }   
-
-
     }
-
-
 }
