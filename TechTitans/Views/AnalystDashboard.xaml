@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechTitans.Views.AnalystDashboard"
+             Title="AnalystDashboard">
+    <VerticalStackLayout>
+        <Label 
+            Text="Dashboard"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <VerticalStackLayout Spacing="15" Padding="10, 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Total Minutes Listened" />
+                <Label Grid.Column="1" Text="Total Plays" />
+                <Label Grid.Column="2" Text="Total Likes" />
+                <Label Grid.Column="3" Text="Total Dislikes" />
+                <Label Grid.Column="4" Text="Total Skips" />
+            </Grid>
+            <Grid x:Name="Dashboard">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="{Binding TotalMinutesListened}" />
+                <Label Grid.Column="1" Text="{Binding TotalPlays}" />
+                <Label Grid.Column="2" Text="{Binding TotalLikes}" />
+                <Label Grid.Column="3" Text="{Binding TotalDislikes}" />
+                <Label Grid.Column="4" Text="{Binding TotalSkips}" />
+            </Grid>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

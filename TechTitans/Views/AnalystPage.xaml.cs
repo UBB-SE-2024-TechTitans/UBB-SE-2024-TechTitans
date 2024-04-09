@@ -14,16 +14,6 @@ public partial class AnalystPage : ContentPage
 	public AnalystPage()
 	{
 		InitializeComponent();
-		FullDetailsOnSongController fullDetailsOnSongController = new FullDetailsOnSongController();
-		FullDetailsOnSong FullDetails = fullDetailsOnSongController.GetFullDetailsOnSong(201);
-		FullDetailsOnSong CurrentMonth = fullDetailsOnSongController.GetCurrentMonthDetails(201);
-		//print out the details
-		Console.WriteLine(FullDetails.TotalMinutesListened);
-		// this.BindingContext = FullDetails;
-		this.BindingContext = CurrentMonth;
-		//print out the details
-
-	}
 		topGenresController = new TopGenresController();
 		
 	}
