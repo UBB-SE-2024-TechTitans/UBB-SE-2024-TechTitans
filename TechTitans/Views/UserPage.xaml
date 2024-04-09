@@ -7,13 +7,12 @@
              xmlns:custom="clr-namespace:TechTitans.Views.Components" 
              x:Class="TechTitans.Views.UserPage"
              Title="UserPage">
-    
+
     <VerticalStackLayout>
-        <!--exemplu-->
-        <custom:BackHomeButton />
         <Label 
             Text="User Page"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+        />
     </VerticalStackLayout>
 </ContentPage>
