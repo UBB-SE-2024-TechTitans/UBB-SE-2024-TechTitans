@@ -37,11 +37,13 @@
         </VerticalStackLayout>
         <!--linie f ghetto-->
         <BoxView Color="Gray" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10, 5" />
-        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10" BackgroundColor="Gray">
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
             <VerticalStackLayout>
                 <Button
                     Text="Info"
                     Style="{StaticResource TabNavButton}"
+                    TextColor="#6E6E6E"
+                    FontAttributes="Bold"
                     Clicked="OnInfoClick"
                 />
                 <BoxView x:Name="InfoBoxView" Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand"/>

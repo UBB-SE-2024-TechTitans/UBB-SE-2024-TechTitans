@@ -23,8 +23,6 @@ public partial class ArtistSongDashboard : ContentPage
 			SongDetails = service.getSongDetails(songID),
 			ArtistInfo = service.getArtistInfo(songID)
 		};
-		
-
 	}
 	private void LoadPage()
 	{
