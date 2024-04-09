@@ -62,7 +62,7 @@ namespace TechTitans.Repositories
         public Tuple<string, decimal> GetMostPlayedArtistPercentile(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT TOP 1 sd.artist_id as ArtistId, COUNT(*) AS StartListenEvents FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sd ON ub.song_id = sd.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY sd.artist_id ORDER BY COUNT(*) DESC;");
+            cmd.Append("SELECT TOP 1 sd.artist_id as Artist_Id, COUNT(*) AS Start_Listen_Events FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sd ON ub.song_id = sd.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY sd.artist_id ORDER BY COUNT(*) DESC;");
             var response = _connection.Query<MostPlayedArtistInfo>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
             cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artist_Id");

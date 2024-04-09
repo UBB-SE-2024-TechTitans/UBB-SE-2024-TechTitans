@@ -27,7 +27,7 @@ namespace TechTitans.Repositories
         public List<UserPlaybackBehaviour> GetUserPlaybackBehaviour(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT user_id as User_Id, song_id as Song_Id, event_type as EventType, timestamp as Timestamp FROM UserPlaybackBehaviour WHERE user_id = @userId");
+            cmd.Append("SELECT user_id as User_Id, song_id as Song_Id, event_type as Event_Type, timestamp as Timestamp FROM UserPlaybackBehaviour WHERE user_id = @userId");
             return _connection.Query<UserPlaybackBehaviour>(cmd.ToString(), new { userId }).ToList();
         }
     }
