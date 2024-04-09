@@ -20,6 +20,7 @@ using TechTitans.Models;
         // Loop through each song and dynamically create SongItem controls
         int rowIndex = 0;
         int columnIndex = 0;
+        SongsGrid.RowDefinitions.Add(new RowDefinition());
         foreach (var song in songs)
         {
             var songItem = new SongItem(); // Create a new instance of SongItem
@@ -41,16 +42,18 @@ using TechTitans.Models;
             {
                 columnIndex = 0;
                 rowIndex++;
+                SongsGrid.RowDefinitions.Add(new RowDefinition());
             }
         }
     }
-        private void LoadSongRecommandation()
+        private void LoadAdvertisedSongs()
         {
             var songs = GetSongs(); // Get your list of recommended songs from somewhere (e.g., database, API, local storage)
             //for now we use the same mock function for retreving songs for frontend building purposes
             // Loop through each song and dynamically create SongItem controls
             int rowIndex = 0;
             int columnIndex = 0;
+            SongsAdvertisedGrid.RowDefinitions.Add(new RowDefinition());
             foreach (var song in songs)
             {
                 var songItem = new SongItem(); // Create a new instance of SongItem
@@ -72,10 +75,11 @@ using TechTitans.Models;
                 {
                     columnIndex = 0;
                     rowIndex++;
+                    SongsAdvertisedGrid.RowDefinitions.Add(new RowDefinition());
                 }
             }
         }
-    private void LoadAdvertisedSongs()
+    private void LoadSongRecommandation()
     {
         var songs = GetSongs(); // Get your list of recommended songs from somewhere (e.g., database, API, local storage)
                                 //for now we use the same mock function for retreving songs for frontend building purposes
@@ -83,6 +87,7 @@ using TechTitans.Models;
                                 // Loop through each song and dynamically create SongItem controls
         int rowIndex = 0;
         int columnIndex = 0;
+        SongsRecommandationGrid.RowDefinitions.Add(new RowDefinition());
         foreach (var song in songs)
         {
             var songItem = new SongItem(); // Create a new instance of SongItem
@@ -104,6 +109,7 @@ using TechTitans.Models;
             {
                 columnIndex = 0;
                 rowIndex++;
+                SongsRecommandationGrid.RowDefinitions.Add(new RowDefinition());
             }
         }
     }

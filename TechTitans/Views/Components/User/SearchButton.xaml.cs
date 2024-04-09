@@ -13,6 +13,9 @@ namespace TechTitans.Views.Components.User
             InitializeComponent();
         }
 
-        private void OnSearchClick(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new SearchPage());
+        private void OnSearchClick(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SearchPage());
+        }
     }
 }

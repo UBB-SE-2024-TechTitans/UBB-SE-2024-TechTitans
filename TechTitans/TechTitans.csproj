@@ -98,9 +98,6 @@
 	  <MauiXaml Update="Views\Components\SongItem.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Components\User\BackToUser.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\Components\User\SearchButton.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -18,11 +18,14 @@ namespace TechTitans.Views
         }
         int rowIndex = 0;
         int columnIndex = 0;
-        private void SearchBar_TextChanged(object sender, EventArgs e) { 
-        //here we should search from our database with some function (in repo/service) but will do 
-        //a mock function just for frontend development puposes
+        private void SearchBar_TextChanged(object sender, EventArgs e) {
+            //here we should search from our database with some function (in repo/service) but will do 
+            //a mock function just for frontend development puposes
+            // Clear existing children from SongsGrid
+            SongsGrid.Children.Clear();
             string song_to_find=((SearchBar)sender).Text;
             var songs = new ObservableCollection<SongBasicInfo>(GetSongs(song_to_find));
+            SongsGrid.RowDefinitions.Add(new RowDefinition());
             foreach (var song in songs)
             {
                 var songItem = new SongItem(); // Create a new instance of SongItem
@@ -43,6 +46,7 @@ namespace TechTitans.Views
                 if (columnIndex == 2)
                 {
                     columnIndex = 0;
+                    SongsGrid.RowDefinitions.Add(new RowDefinition());
                     rowIndex++;
                 }
             }

@@ -10,7 +10,6 @@
              Title="UserPage">
     <ScrollView>
         <VerticalStackLayout>
-            <custom:BackHomeButton />
             <custom_user:SearchSongsButton/>
             <Label 
         Text="Your Most Listened Songs"
@@ -20,11 +19,6 @@
             />
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -39,11 +33,6 @@
             />
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsRecommandationGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
@@ -58,11 +47,6 @@
                 />
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsAdvertisedGrid">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
