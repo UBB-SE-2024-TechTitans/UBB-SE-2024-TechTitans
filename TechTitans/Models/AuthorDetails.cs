@@ -13,7 +13,7 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("artist_id")]
-        public int ArtistId { get; set; } = 0;
+        public int Artist_Id { get; set; } = 0;
 
         [Column("name")]
         public string Name { get; set; } = "DefaultName";

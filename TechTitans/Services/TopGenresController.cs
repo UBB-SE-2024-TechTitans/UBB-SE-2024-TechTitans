@@ -18,7 +18,7 @@ namespace TechTitans.Services
             foreach (SongBasicDetails song in SongRepo.GetAll()) { 
                 foreach (SongRecommendationDetails songDetails in SongRecommendationRepo.GetAll())
                 {
-                    if (songDetails.SongId == song.SongId && songDetails.Month == month && songDetails.Year == year)
+                    if (songDetails.Song_Id == song.Song_Id && songDetails.Month == month && songDetails.Year == year)
                     {
                         if (genreCount.ContainsKey(song.Genre))
                         {

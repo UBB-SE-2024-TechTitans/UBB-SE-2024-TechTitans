@@ -15,7 +15,7 @@ namespace TechTitans.Services
         public SongBasicInfo songBasicDetailsToInfo(SongBasicDetails song)
         {
             SongBasicInfo songInfo = new SongBasicInfo();
-            songInfo.SongId = song.SongId;
+            songInfo.SongId = song.Song_Id;
             songInfo.Name = song.Name;
             songInfo.Genre = song.Genre;
             songInfo.Subgenre = song.Subgenre;
@@ -25,14 +25,14 @@ namespace TechTitans.Services
             songInfo.Image = song.Image;
             foreach (AuthorDetails artist in ArtistRepo.GetAll())
             {
-                if (artist.ArtistId == song.ArtistId)
+                if (artist.Artist_Id == song.Artist_Id)
                 {
                     songInfo.Artist = artist.Name;
                 }
             }
             foreach (SongFeatures feature in FeatureRepo.GetAll())
             {
-                if (feature.Song_Id == song.SongId)
+                if (feature.Song_Id == song.Song_Id)
                 {
                     songInfo.Features.Add(feature.ToString());
                 }
@@ -47,7 +47,7 @@ namespace TechTitans.Services
             List<SongBasicInfo> artistSongs = new List<SongBasicInfo>();
             foreach (SongBasicDetails song in SongRepo.GetAll())
             {
-                if (song.ArtistId == artistId)
+                if (song.Artist_Id == artistId)
                 {
                     SongBasicInfo songInfo = songBasicDetailsToInfo(song);
                     artistSongs.Add(songInfo);
@@ -78,7 +78,7 @@ namespace TechTitans.Services
         {
             foreach (SongBasicDetails song in SongRepo.GetAll())
             {
-                if (song.SongId == songId)
+                if (song.Song_Id == songId)
                 {
                     SongBasicInfo songInfo = songBasicDetailsToInfo(song);
                     return songInfo;
@@ -92,7 +92,7 @@ namespace TechTitans.Services
         {
             foreach (SongRecommendationDetails songDetails in SongRecommendationRepo.GetAll())
             {
-                if (songDetails.SongId == songId)
+                if (songDetails.Song_Id == songId)
                 {
                     return songDetails;
                 }
@@ -105,11 +105,11 @@ namespace TechTitans.Services
         {
             foreach (SongBasicDetails song in SongRepo.GetAll())
             {
-                if (song.SongId == SongId)
+                if (song.Song_Id == SongId)
                 {
                     foreach (AuthorDetails artist in ArtistRepo.GetAll())
                     {
-                        if (artist.ArtistId == song.ArtistId)
+                        if (artist.Artist_Id == song.Artist_Id)
                         {
                             return artist;
                         }

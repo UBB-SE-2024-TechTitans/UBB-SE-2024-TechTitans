@@ -46,11 +46,11 @@ namespace TechTitans.Services
             //for every start and end event pair, calculate the difference in minutes and add it to the total
             for (int i = 0; i < userEvents.Count; i++)
             {
-                if (userEvents[i].EventType == PlaybackEventType.start_play)
+                if (userEvents[i].Event_Type == PlaybackEventType.start_play)
                 {
                     for (int j = i + 1; j < userEvents.Count; j++)
                     {
-                        if (userEvents[j].EventType == PlaybackEventType.end_play)
+                        if (userEvents[j].Event_Type == PlaybackEventType.end_play)
                         {
                             minutesListened += (int)(userEvents[j].Timestamp - userEvents[i].Timestamp).TotalMinutes;
                             i = j;
@@ -78,7 +78,7 @@ namespace TechTitans.Services
             int playCount = 0;
             for(int i = 0; i < userEvents.Count; i++)
             {
-                if ((userEvents[i].EventType == PlaybackEventType.start_play) && (userEvents[i].Timestamp.Year == DateTime.Now.Year))
+                if ((userEvents[i].Event_Type == PlaybackEventType.start_play) && (userEvents[i].Timestamp.Year == DateTime.Now.Year))
                 {
                     playCount++;
                 }

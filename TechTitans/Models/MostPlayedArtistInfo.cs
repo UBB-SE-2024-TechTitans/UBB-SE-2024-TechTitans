@@ -10,10 +10,10 @@ namespace TechTitans.Models
     internal class MostPlayedArtistInfo
     {
         [Column("artist_id")]
-        public int ArtistId { get; set; }
+        public int Artist_Id { get; set; }
 
         [Column("start_listen_events")]
-        public int StartListenEvents { get; set; }
+        public int Start_Listen_Events { get; set; }
 
     }
 }

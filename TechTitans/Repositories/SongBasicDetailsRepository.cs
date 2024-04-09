@@ -13,13 +13,13 @@ namespace TechTitans.Repositories
     {
         public SongBasicInfo SongBasicDetailsToSongBasicInfo(SongBasicDetails songBasicDetails)
         {   
-            var artistId = songBasicDetails.ArtistId;
+            var artistId = songBasicDetails.Artist_Id;
             var cmd = new StringBuilder();
             cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artistId");
             var artistName = _connection.Query<string>(cmd.ToString(), new { artistId }).FirstOrDefault();
             return new SongBasicInfo
             {
-                SongId = songBasicDetails.SongId,
+                SongId = songBasicDetails.Song_Id,
                 Name = songBasicDetails.Name,
                 Genre = songBasicDetails.Genre,
                 Subgenre = songBasicDetails.Subgenre,
@@ -66,12 +66,12 @@ namespace TechTitans.Repositories
             var response = _connection.Query<MostPlayedArtistInfo>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
             cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artistId");
-            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { response.ArtistId }).FirstOrDefault();
+            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { response.Artist_Id }).FirstOrDefault();
             cmd.Clear();
             cmd.Append("SELECT COUNT(*) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE());");
             var totalSongs = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)response.StartListenEvents / totalSongs);
+            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)response.Start_Listen_Events / totalSongs);
         }
 
         public List<string> GetTop5Genres(int userId)
