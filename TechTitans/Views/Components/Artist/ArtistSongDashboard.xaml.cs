@@ -1,10 +1,11 @@
 using TechTitans.Models;
 using TechTitans.ViewModels;
-
+using TechTitans.Services;
 namespace TechTitans.Views.Components.Artist;
 
 public partial class ArtistSongDashboard : ContentPage
 {
+	public ArtistSongDashboardController service = new ();
 	// alt domain song type cu mai multe detalii
 	int songId;
 	ArtistSongDashboardViewModel viewModel;
@@ -12,13 +13,17 @@ public partial class ArtistSongDashboard : ContentPage
 	{
 		songId = song.SongId;
 		InitializeComponent();
-		populateViewModel();
+		populateViewModel(songId);
 		LoadPage();
 	}
-	private void populateViewModel()
+	private void populateViewModel(int songID)
 	{
-		// viewModel = getArtistSongDashboardModel(int sondId)
-		viewModel = getMockedViewModel();
+		viewModel = new ArtistSongDashboardViewModel() {
+			SongInfo = service.getSongInfo(songID),
+			SongDetails = service.getSongDetails(songID),
+			ArtistInfo = service.getArtistInfo(songID)
+		};
+		
 
 	}
 	private void LoadPage()
@@ -39,16 +44,16 @@ public partial class ArtistSongDashboard : ContentPage
 		content4.Text = viewModel.SongInfo.Language;
     }
 
-    private ArtistSongDashboardViewModel getMockedViewModel()
-	{
-		var mockedModel = new ArtistSongDashboardViewModel()
-		{
-			SongInfo = new SongBasicInfo(),
-			SongDetails = new SongRecommendationDetails(),
-			ArtistInfo = new AuthorDetails(),
-		};
-		return mockedModel;
-	}
+ //   private ArtistSongDashboardViewModel getMockedViewModel()
+	//{
+	//	var mockedModel = new ArtistSongDashboardViewModel()
+	//	{
+	//		SongInfo = new SongBasicInfo(),
+	//		SongDetails = new SongRecommendationDetails(),
+	//		ArtistInfo = new AuthorDetails(),
+	//	};
+	//	return mockedModel;
+	//}
 
 	private void OnInfoClick(object sender, EventArgs e)
 	{
