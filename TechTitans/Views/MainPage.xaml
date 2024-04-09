@@ -42,18 +42,6 @@
                 Clicked="OnEndOfYearRecapClicked"
                 HorizontalOptions="Fill"
             />
-            <Label
-                x:Name="TestId"
-                Text="test label test"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1"
-            />
-            <Label
-                x:Name="TestName"
-                Text=""
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1"
-            />
         </VerticalStackLayout>
     </ScrollView>
 

@@ -425,11 +425,29 @@
 
     <Style x:Key="TabNavButton" TargetType="Button">
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
         <Setter Property="FontSize" Value="18" />
-        <Setter Property="BorderWidth" Value="2,0,0,0" />
-        <Setter Property="BorderColor" Value="Black" />
-        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="CornerRadius" Value="3"/>
+
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="ButtonStates">
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="LightGray" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Transparent" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
     </Style>
+
+
 
 </ResourceDictionary>

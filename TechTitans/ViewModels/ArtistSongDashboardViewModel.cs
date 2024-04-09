@@ -8,6 +8,6 @@ namespace TechTitans.ViewModels
     {
         public SongBasicInfo SongInfo { get; set; }
         public AuthorDetails ArtistInfo { get; set; }
-        public SongBasicDetails SongDetails { get; set; }
+        public SongRecommendationDetails SongDetails { get; set; }
     }
 }
