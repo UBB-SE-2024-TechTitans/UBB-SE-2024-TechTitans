@@ -22,7 +22,7 @@
             Aspect="AspectFit"
             Margin="0,40,0,40"
         />
-        <Label Text="{Binding MostPlayedSongPercentile.Item2, StringFormat='You ranked in top {0:F2}% of listeners'}"
+        <Label Text="{Binding MostPlayedSongPercentile.Item2, StringFormat='You played it a whopping {0:F2}% of the time'}"
                 VerticalOptions="Start" 
                 HorizontalOptions="Center" 
                 FontSize="25"

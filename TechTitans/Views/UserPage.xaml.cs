@@ -2,12 +2,15 @@ namespace TechTitans.Views;
 using TechTitans.Views.Components.User;
 using TechTitans.Views.Components;
 using TechTitans.Models;
+using TechTitans.Repositories;
+using TechTitans.Services;
 
     public partial class UserPage : ContentPage
     {
-
+        UserService userService=new UserService();
         public UserPage()
         {
+
             InitializeComponent();
             LoadSongs(); //here we load the most recently played songs
             LoadSongRecommandation(); //here we load song recommandation
@@ -15,7 +18,7 @@ using TechTitans.Models;
         }
     private void LoadSongs()
     {
-        var songs = GetSongs(); // Get your list of most recently played songs from somewhere (e.g., database, API, local storage)
+        var songs = userService.get_recently_played(); // Get your list of most recently played songs from somewhere (e.g., database, API, local storage)
 
         // Loop through each song and dynamically create SongItem controls
         int rowIndex = 0;

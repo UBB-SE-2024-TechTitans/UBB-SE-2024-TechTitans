@@ -1,5 +1,6 @@
 using TechTitans.Enums;
 using TechTitans.Models;
+using TechTitans.Services;
 using TechTitans.ViewModels;
 using TechTitans.Views.Components.EndOfYearRecap;
 
@@ -84,13 +85,15 @@ public partial class EndOfYearRecap : ContentPage
         var viewModel = new EndOfYearRecapViewModel()
         {
             Top5MostListenedSongs = mockSongs,
-            MostPlayedSongPercentile = new Tuple<SongBasicInfo, float>(mockSongs.FirstOrDefault(), 0.1f),
-            MostPlayedArtistPercentile = new Tuple<string, float>("BDLP", 0.01f),
+            MostPlayedSongPercentile = new Tuple<SongBasicInfo, decimal>(mockSongs.FirstOrDefault(), 0.1m),
+            MostPlayedArtistPercentile = new Tuple<string, decimal>("BDLP", 0.01m),
             MinutesListened = 9000,
             Top5Genres = ["Manele", "Trap", "Rock", "Rap", "Pop"],
             NewGenresDiscovered = ["Jazz", "Populara", "Clasical", "R&B", "Country"],
-            ListenerPersonality = ListenerPersonality.Vanilla
+            ListenerPersonality = ListenerPersonality.Explorer
         };
+
+        viewModel = new RecapService().GenerateEndOfYearRecap(1001);
 
         BindingContext = viewModel;
         _viewModel = viewModel;

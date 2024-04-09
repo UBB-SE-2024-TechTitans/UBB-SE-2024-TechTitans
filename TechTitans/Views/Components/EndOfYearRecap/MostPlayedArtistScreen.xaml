@@ -38,7 +38,7 @@
                 Padding="20,40,20,20"
                 TextColor="White" >
             <Label.Text>
-                <MultiBinding StringFormat="{}You were in the top {0:F2} of {1} listeners">
+                <MultiBinding StringFormat="{}Out of all your songs, {0:F2} were by {1}">
                     <Binding Path="MostPlayedArtistPercentile.Item2" />
                     <Binding Path="MostPlayedArtistPercentile.Item1" />
                 </MultiBinding>

@@ -9,8 +9,8 @@ namespace TechTitans.ViewModels
     public class EndOfYearRecapViewModel
     {
         public List<SongBasicInfo> Top5MostListenedSongs { get; set; }
-        public Tuple<SongBasicInfo, float> MostPlayedSongPercentile { get; set; }
-        public Tuple<string, float> MostPlayedArtistPercentile { get; set; }
+        public Tuple<SongBasicInfo, decimal> MostPlayedSongPercentile { get; set; }
+        public Tuple<string, decimal> MostPlayedArtistPercentile { get; set; }
         public int MinutesListened {  get; set; }
         public List<string> Top5Genres { get; set; }
         public List<string> NewGenresDiscovered { get; set; }

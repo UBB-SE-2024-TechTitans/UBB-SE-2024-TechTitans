@@ -88,15 +88,7 @@ namespace TechTitans.Views.Components
             }
 
             // Make the percentage always the same size in relation to the size of the progress bar
-            float fontSize = effectiveSize / 2.86f;
-            canvas.FontSize = fontSize;
-            canvas.FontColor = TextColor;
-
-            // Vertical text align the text, and we need a correction factor of around 1.15 to have it aligned properly
-            // Note: The VerticalAlignment.Center property of the DrawString method seems to have no effect
-            float verticalPosition = ((Size / 2) - (fontSize / 2)) * 1.15f;
-            canvas.DrawString($"{Progress}%", x, verticalPosition, effectiveSize, effectiveSize / 4, HorizontalAlignment.Center, VerticalAlignment.Center);
-        }
+           }
 
         private float GetAngle(float progress)
         {
