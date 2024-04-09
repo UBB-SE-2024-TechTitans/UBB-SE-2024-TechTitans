@@ -13,7 +13,7 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("user_id")]
-        public int UserId { get; set; }
+        public int User_Id { get; set; }
 
         [Column("name")]
         public string Name { get; set; }
@@ -22,7 +22,7 @@ namespace TechTitans.Models
         public int Gender { get; set; }
 
         [Column("date_of_birth")]
-        public DateTime DateOfBirth { get; set; }
+        public DateTime Date_O_fBirth { get; set; }
 
         [Column("country")]
         public string Country { get; set; }
@@ -34,6 +34,6 @@ namespace TechTitans.Models
         public string Race { get; set; }
 
         [Column("premium_user")]
-        public bool PremiumUser { get; set; }
+        public bool Premium_User { get; set; }
     }
 }

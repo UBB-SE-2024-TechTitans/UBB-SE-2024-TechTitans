@@ -3,14 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTitans", "TechTitans\TechTitans.csproj", "{29F15AA2-793A-43C6-B33B-D32F76EE30DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechTitans", "TechTitans\TechTitans.csproj", "{29F15AA2-793A-43C6-B33B-D32F76EE30DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Android Emulator|Any CPU = Android Emulator|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Android Emulator|Any CPU.ActiveCfg = Android Emulator|Any CPU
+		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Android Emulator|Any CPU.Build.0 = Android Emulator|Any CPU
+		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Android Emulator|Any CPU.Deploy.0 = Android Emulator|Any CPU
 		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29F15AA2-793A-43C6-B33B-D32F76EE30DC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

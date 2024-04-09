@@ -22,10 +22,6 @@
                 HorizontalOptions="Start"
                 FontSize="16"
             />
-
-
         </VerticalStackLayout>
-        
-
     </HorizontalStackLayout>
 </ContentView>

@@ -68,10 +68,10 @@ public partial class MainPage : ContentPage
 
     }
 
-    private void OnUserCLicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new UserPage());
-    private void OnArtistClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new ArtistPage());
-    private void OnAnalystClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new AnalystPage());
-    private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new EndOfYearRecap());
+    private void OnUserCLicked(object sender, EventArgs e) => Navigation.PushAsync(new UserPage());
+    private void OnArtistClicked(object sender, EventArgs e) => Navigation.PushAsync(new ArtistPage());
+    private void OnAnalystClicked(object sender, EventArgs e) => Navigation.PushAsync(new AnalystPage());
+    private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Navigation.PushAsync(new EndOfYearRecap());
 }
 
 
