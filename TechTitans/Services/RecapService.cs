@@ -64,7 +64,7 @@ namespace TechTitans.Services
 
         public List<string> Top5Genres(int userId)
         {
-            return this.songBasicDetailsRepository.NewGenresDiscovered(userId);
+            return this.songBasicDetailsRepository.GetTop5Genres(userId);
         }
 
         public List<string> NewGenresDiscovered(int userId)

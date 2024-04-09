@@ -5,7 +5,7 @@
              x:Class="TechTitans.Views.Components.EndOfYearRecap.MinutesListenedScreen">
     <StackLayout BackgroundColor="Black">
         <Label 
-            Text="{Binding MinutesListened, StringFormat='You\'ve listended to {0} minutes of music this year...'}"
+            Text="{Binding MinutesListened, StringFormat='You\'ve listened to {0} minutes of music this year...'}"
             VerticalOptions="Start" 
             HorizontalOptions="Center" 
             FontSize="25"
