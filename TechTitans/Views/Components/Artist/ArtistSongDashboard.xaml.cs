@@ -6,12 +6,11 @@ namespace TechTitans.Views.Components.Artist;
 public partial class ArtistSongDashboard : ContentPage
 {
 	// alt domain song type cu mai multe detalii
-	SongBasicInfo song;
+	int songId;
 	ArtistSongDashboardViewModel viewModel;
 	public ArtistSongDashboard(SongBasicInfo song)
 	{
-		// song = service.GetSongById(songId);
-		this.song = song;
+		songId = song.SongId;
 		InitializeComponent();
 		populateViewModel();
 		LoadPage();
