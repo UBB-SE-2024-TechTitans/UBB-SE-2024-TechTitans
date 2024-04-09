@@ -32,7 +32,7 @@ public partial class MainPage : ContentPage
 
         RepositoryAuthorDetails = new TestAuthorDetails();
         var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
-        TestId.Text = dbDataAuthorDetails.ArtistId.ToString();
+        TestId.Text = dbDataAuthorDetails.Artist_Id.ToString();
         TestName.Text = dbDataAuthorDetails.Name;
 
         // RepositorySongBasicDetails = new TestSongBasicDetails();

@@ -22,11 +22,11 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("user_id")]
-        public int UserId { get; set; }
+        public int User_Id { get; set; }
 
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; }
+        public int Song_Id { get; set; }
 
         public PlaybackEventType EventType { get; set; }
 

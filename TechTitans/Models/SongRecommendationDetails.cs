@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,10 +22,10 @@ namespace TechTitans.Models
         public int Dislikes { get; set; }
 
         [Column("minutes_listened")]
-        public int MinutesListened { get; set; }
+        public int Minutes_Listened { get; set; }
 
         [Column("number_of_plays")]
-        public int NumberOfPlays { get; set; }
+        public int Number_Of_Plays { get; set; }
 
         [Key]
         [Column("month")]
