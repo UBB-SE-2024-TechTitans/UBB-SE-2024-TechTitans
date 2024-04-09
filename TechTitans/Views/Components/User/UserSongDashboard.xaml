@@ -37,7 +37,7 @@
         </VerticalStackLayout>
         <!--linie f ghetto-->
         <BoxView Color="Gray" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10, 5" />
-        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10" BackgroundColor="Gray">
             <VerticalStackLayout>
                 <Button
                     Text="Info"

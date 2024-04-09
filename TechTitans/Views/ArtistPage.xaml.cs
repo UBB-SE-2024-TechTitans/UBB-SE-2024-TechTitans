@@ -64,14 +64,14 @@ public partial class ArtistPage : ContentPage
         {
             new SongBasicInfo
             {
-                SongId = 0,
+                SongId = 10,
                 Name = "Song 1",
                 Artist = "Artist 1",
                 Image = "song_img_default.png"
             },
             new SongBasicInfo
             {
-                SongId = 1,
+                SongId = 201,
                 Name = "Song 2",
                 Artist = "Artist 2",
                 Image = "song_img_default.png"
