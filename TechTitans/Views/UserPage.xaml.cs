@@ -120,15 +120,22 @@ using TechTitans.Models;
 
     private List<SongBasicInfo> GetSongs()
     {
+        // Creating a list of strings
+        List<string> features = new List<string>();
+
+        // Adding strings to the list
+        features.Add("feature1");
+
         // mocked songs, to be replaced with actual data retrieval from db
         return new List<SongBasicInfo>
             {
-                new SongBasicInfo { SongId = 0, Name = "Song 1", Artist = "Artist 1", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 1, Name = "Song 2", Artist = "Artist 2", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 2, Name = "Song 3", Artist = "Artist 3", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 3, Name = "Song 4", Artist = "Artist 4", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 4, Name = "Song 5", Artist = "Artist 5", Image = "song_img_default.png" },
-                new SongBasicInfo { SongId = 5, Name = "Song 6", Artist = "Artist 6", Image = "song_img_default.png" },
+                
+                new SongBasicInfo { SongId = 0, Name = "Song 1", Artist = "Artist 1", Image = "song_img_default.png", Genre="genre", Subgenre="subgenre", Country="country", Language="language", Album="album", Features=features },
+                new SongBasicInfo { SongId = 1, Name = "Song 2", Artist = "Artist 2", Image = "song_img_default.png", Genre="genre", Subgenre="subgenre", Country="country", Language="language", Album="album", Features=features },
+                new SongBasicInfo { SongId = 2, Name = "Song 3", Artist = "Artist 3", Image = "song_img_default.png", Genre="genre", Subgenre="subgenre", Country="country", Language="language", Album="album", Features=features },
+                new SongBasicInfo {SongId = 3, Name = "Song 4", Artist = "Artist 4", Image = "song_img_default.png", Genre = "genre", Subgenre = "subgenre", Country = "country", Language = "language", Album = "album", Features = features},
+                new SongBasicInfo { SongId = 4, Name = "Song 5", Artist = "Artist 5", Image = "song_img_default.png", Genre="genre", Subgenre="subgenre", Country="country", Language="language", Album="album", Features=features },
+                new SongBasicInfo {SongId = 5, Name = "Song 6", Artist = "Artist 6", Image = "song_img_default.png", Genre = "genre", Subgenre = "subgenre", Country = "country", Language = "language", Album = "album", Features = features},
             };
     }
 

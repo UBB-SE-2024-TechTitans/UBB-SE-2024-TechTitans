@@ -21,8 +21,15 @@ namespace TechTitans.Views.Components.User
         private void LoadPage()
         {
             Console.WriteLine(song);
+            SongImageUrl.Source = song.Image;
             SongTitle.Text = song.Name;
+            SongGenre.Text = song.Genre;
+            SongSubGenre.Text = song.Subgenre;
             SongArtist.Text = song.Artist;
+            SongCountry.Text = song.Country;
+            SongLanguage.Text = song.Language;
+            SongAlbum.Text = song.Album;
+
         }
 
         private SongBasicInfo getMockedSong()
