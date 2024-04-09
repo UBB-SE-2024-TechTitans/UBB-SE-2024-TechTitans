@@ -2,9 +2,11 @@ namespace TechTitans.Views;
 using TechTitans.Views.Components.Artist;
 using TechTitans.Views.Components;
 using TechTitans.Models;
+using TechTitans.Services;
 
 public partial class ArtistPage : ContentPage
 {
+    public ArtistSongDashboardController service = new();
 	public ArtistPage()
 	{
 		InitializeComponent();
@@ -13,7 +15,7 @@ public partial class ArtistPage : ContentPage
 
     private void LoadSongs()
     {
-        var songs = GetSongs(); // Get your list of songs from somewhere (e.g., database, API, local storage)
+        var songs = service.getSongsForMainPage(); // Get your list of songs from somewhere (e.g., database, API, local storage)
 
         // initial row
         SongsGrid.RowDefinitions.Add(new RowDefinition());

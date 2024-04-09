@@ -13,7 +13,7 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; } = 0;
+        public int Song_Id { get; set; } = 0;
 
         [Column("likes")]
         public int Likes { get; set; } = 0;
