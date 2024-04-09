@@ -85,7 +85,7 @@ public partial class EndOfYearRecap : ContentPage
             MinutesListened = 9000,
             Top5Genres = ["Manele", "Trap", "Rock", "Rap", "Pop"],
             NewGenresDiscovered = ["Jazz", "Populara", "Clasical", "R&B", "Country"],
-            ListenerPersonality = ListenerPersonality.Adventurer
+            ListenerPersonality = ListenerPersonality.Explorer
         };
 
         BindingContext = viewModel;

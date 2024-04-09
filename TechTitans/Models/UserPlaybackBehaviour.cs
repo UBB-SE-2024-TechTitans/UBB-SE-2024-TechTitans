@@ -28,8 +28,11 @@ namespace TechTitans.Models
         [Column("song_id")]
         public int SongId { get; set; }
 
+        [Column("event_type")]
         public PlaybackEventType EventType { get; set; }
-
+        
+        [Key]
+        [Column("timestamp")]
         public DateTime Timestamp { get; set; }
     }
 }
