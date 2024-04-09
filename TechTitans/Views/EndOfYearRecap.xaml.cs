@@ -9,6 +9,7 @@ public partial class EndOfYearRecap : ContentPage
 {
     private int _pageIndex = 0;
     private List<ProgressBar> _progressBar;
+    private EndOfYearRecapViewModel _viewModel;
 	public EndOfYearRecap()
 	{
 		var mockSongs = new List<SongBasicInfo>()
@@ -88,12 +89,13 @@ public partial class EndOfYearRecap : ContentPage
             MinutesListened = 9000,
             Top5Genres = ["Manele", "Trap", "Rock", "Rap", "Pop"],
             NewGenresDiscovered = ["Jazz", "Populara", "Clasical", "R&B", "Country"],
-            ListenerPersonality = ListenerPersonality.Adventurer
+            ListenerPersonality = ListenerPersonality.Vanilla
         };
 
         BindingContext = viewModel;
+        _viewModel = viewModel;
         InitializeComponent();
-        _progressBar = [ProgressBar1, ProgressBar2, ProgressBar3, ProgressBar4, ProgressBar5, ProgressBar6, ProgressBar7];
+        _progressBar = [ProgressBar1, ProgressBar2, ProgressBar3, ProgressBar4, ProgressBar5, ProgressBar6, ProgressBar7, ProgressBar8];
         ChangeScreens();
     }
 
@@ -104,7 +106,6 @@ public partial class EndOfYearRecap : ContentPage
     private async void ChangeScreens()
     {
         _pageIndex++;
-        var localIndex = _pageIndex;
         switch (_pageIndex)
         {
             case 1:
@@ -146,8 +147,14 @@ public partial class EndOfYearRecap : ContentPage
                     BindingContext = BindingContext
                 };
                 break;
+            case 8:
+                MainContentWindow.Content = new ListenerPersonalityScreen(_viewModel)
+                {
+                    BindingContext = BindingContext,
+                };
+                break;
             default:
-                Application.Current.MainPage = new NavigationPage(new MainPage());
+                await Navigation.PopAsync();
                 return;
         }
         await _progressBar[_pageIndex - 1].ProgressTo(1, 5000, Easing.Linear);
