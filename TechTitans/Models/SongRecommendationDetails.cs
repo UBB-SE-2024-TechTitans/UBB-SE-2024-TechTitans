@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,26 +13,26 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int SongId { get; set; }
+        public int SongId { get; set; } = 0;
 
         [Column("likes")]
-        public int Likes { get; set; }
+        public int Likes { get; set; } = 0;
 
         [Column("dislikes")]
-        public int Dislikes { get; set; }
+        public int Dislikes { get; set; } = 0;
 
         [Column("minutes_listened")]
-        public int MinutesListened { get; set; }
+        public int Minutes_Listened { get; set; } = 0;
 
         [Column("number_of_plays")]
-        public int NumberOfPlays { get; set; }
+        public int Number_Of_Plays { get; set; } = 0;
 
         [Key]
         [Column("month")]
-        public int Month { get; set; }
+        public int Month { get; set; } = 0;
 
         [Key]
         [Column("year")]
-        public int Year { get; set; }
+        public int Year { get; set; } = 0;
     }
 }

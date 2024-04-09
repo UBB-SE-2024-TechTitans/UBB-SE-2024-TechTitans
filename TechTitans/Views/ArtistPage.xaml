@@ -5,18 +5,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.ArtistPage"
-             Title="ArtistPage">
+             Title="Welcome DummyArtist69!">
     <VerticalStackLayout>
-        <custom:BackHomeButton />
         <Label 
-            Text="Artist Page"
+            Text="Your Top Songs"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" 
+            HorizontalOptions="Start" 
+            FontAttributes="Bold"
+            FontSize="16"
+            Margin="10,0,0,0"
         />
+        <BoxView Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10,5"/>
         <VerticalStackLayout Spacing="15" Padding="10, 0">
-            <custom:SongItem />
-            <custom:SongItem />
-            <custom:SongItem />
+            <Grid x:Name="SongsGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
         </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

@@ -15,15 +15,14 @@ public partial class SongItem : ContentView
         Language = "Romanian",
         Country = "Romania",
         Album = "Single",
-        Image = "https://i.ytimg.com/vi/Ovbn5mPit8o/sddefault.jpg?v=64c3f573"
+        Image = "song_img_default.png"
     };
 
     public SongItem()
 	{
-        if (BindingContext == null) 
-        {
-            BindingContext = this.mockSong;
-        }
+        if (BindingContext == null)
+            BindingContext = mockSong; 
+
 		InitializeComponent();
 	}
 }

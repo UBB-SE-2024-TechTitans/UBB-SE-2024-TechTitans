@@ -3,6 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Screens="clr-namespace:TechTitans.Views.Components.EndOfYearRecap" 
              x:Class="TechTitans.Views.EndOfYearRecap"
-             Title="EndOfYearRecap">
-    <Screens:FirstScreen />
+             NavigationPage.HasNavigationBar="False">
+    <StackLayout>
+        <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Orientation="Horizontal">
+            <ProgressBar x:Name="ProgressBar1" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar2" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar3" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar4" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar5" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar6" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar7" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+            <ProgressBar x:Name="ProgressBar8" VerticalOptions="Start" HorizontalOptions="Center" Margin="5,0,5,0"/>
+        </StackLayout>
+        <ContentView x:Name="MainContentWindow" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"> 
+            <ContentView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </ContentView.GestureRecognizers>
+        </ContentView>  
+    </StackLayout>
 </ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:TechTitans.Views.Components"
+             x:Class="TechTitans.Views.Components.User.UserSongDashboard"
+             Title="Song Dashboard">
+    <VerticalStackLayout Padding="10">
+        <!--take song title from Binding context-->
+		<Image
+            x:Name="SongImageUrl"
+			
+            HeightRequest="150"
+            Aspect="AspectFit"
+			VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+			
+        />
+        <Label 
+            x:Name="SongTitle"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+			FontSize="30"
+        />
+        <Label
+            x:Name="SongArtist"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<Label
+            x:Name="SongGenre"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<Label
+            x:Name="SongSubGenre"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<Label
+            x:Name="SongCountry"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<Label
+            x:Name="SongLanguage"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<Label
+            x:Name="SongAlbum"
+            Text=""
+            VerticalOptions="StartAndExpand"
+			HorizontalOptions="StartAndExpand"
+        />
+		<!--list of features needs to be added but right now i don t feel like doing it =) -->
+    </VerticalStackLayout>
+</ContentPage>
