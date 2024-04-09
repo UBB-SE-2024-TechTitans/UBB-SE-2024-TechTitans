@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using TechTitans.Repositories;
 using System.Reflection;
+using CommunityToolkit.Maui;
 
 namespace TechTitans
 {
@@ -16,6 +17,7 @@ namespace TechTitans
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -30,7 +30,7 @@ public partial class MainPage : ContentPage
         // TestId.Text = dbDataDemographic.UserId.ToString();
         // TestName.Text = dbDataDemographic.Name;
 
-        RepositoryAuthorDetails = new TestAuthorDetails();
+      /*  RepositoryAuthorDetails = new TestAuthorDetails();
         var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
 
         // RepositorySongBasicDetails = new TestSongBasicDetails();
@@ -71,5 +71,3 @@ public partial class MainPage : ContentPage
     private void OnAnalystClicked(object sender, EventArgs e) => Navigation.PushAsync(new AnalystPage());
     private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Navigation.PushAsync(new EndOfYearRecap());
 }
-
-

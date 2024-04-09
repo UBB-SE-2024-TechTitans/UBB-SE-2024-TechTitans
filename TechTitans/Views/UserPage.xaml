@@ -4,15 +4,56 @@
 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:custom="clr-namespace:TechTitans.Views.Components" 
+             xmlns:custom="clr-namespace:TechTitans.Views.Components"
+             xmlns:custom_user="clr-namespace:TechTitans.Views.Components.User"
              x:Class="TechTitans.Views.UserPage"
              Title="UserPage">
-
-    <VerticalStackLayout>
-        <Label 
-            Text="User Page"
+    <ScrollView>
+        <VerticalStackLayout>
+            <custom_user:SearchSongsButton/>
+            <Label 
+        Text="Your Most Listened Songs"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" 
+        Margin="10,0,0,0"
+            />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
+            <Label 
+        Text="Recommended Songs"
+        VerticalOptions="Center" 
+        HorizontalOptions="Start" 
+        Margin="10,0,0,0"
+            />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsRecommandationGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
+            <Label 
+            Text="Advertised Songs"
             VerticalOptions="Center" 
-            HorizontalOptions="Center"
-        />
-    </VerticalStackLayout>
+            HorizontalOptions="Start" 
+            Margin="10,0,0,0"
+                />
+            <VerticalStackLayout Spacing="15" Padding="10, 0">
+                <Grid x:Name="SongsAdvertisedGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+
+    </ScrollView>
 </ContentPage>
