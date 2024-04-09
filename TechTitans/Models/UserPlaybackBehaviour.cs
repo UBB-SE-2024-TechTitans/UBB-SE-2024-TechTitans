@@ -6,17 +6,10 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechTitans.Enums;
 
 namespace TechTitans.Models
 {
-    public enum PlaybackEventType
-    {
-        like = 1,
-        start_play = 2,
-        end_play = 3,
-        dislike = 4,
-        skip = 5
-    }
     [Table("UserPlaybackBehaviour")]
     public class UserPlaybackBehaviour
     {
@@ -35,5 +28,5 @@ namespace TechTitans.Models
         [Column("timestamp")]
         public DateTime Timestamp { get; set; }
     }
-}
+}   
 
