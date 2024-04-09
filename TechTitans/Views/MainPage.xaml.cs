@@ -30,10 +30,10 @@ public partial class MainPage : ContentPage
         // TestId.Text = dbDataDemographic.UserId.ToString();
         // TestName.Text = dbDataDemographic.Name;
 
-        RepositoryAuthorDetails = new TestAuthorDetails();
+      /*  RepositoryAuthorDetails = new TestAuthorDetails();
         var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
         TestId.Text = dbDataAuthorDetails.ArtistId.ToString();
-        TestName.Text = dbDataAuthorDetails.Name;
+        TestName.Text = dbDataAuthorDetails.Name;*/
 
         // RepositorySongBasicDetails = new TestSongBasicDetails();
         // var dbDataSongBasicDetails = RepositorySongBasicDetails.TestMethod();
