@@ -48,13 +48,13 @@ namespace TechTitans.Repositories
         public Tuple<SongBasicDetails, decimal> GetMostPlayedSongPercentile(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT * FROM SongBasicDetails WHERE song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
+            cmd.Append("SELECT * FROM SongBasicDetails WHERE song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
             var mostPlayedSong = _connection.Query<SongBasicDetails>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            cmd.Append("SELECT COUNT(DISTINCT song_id) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2;");
+            cmd.Append("SELECT COUNT(*) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE());");
             var totalSongs = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            cmd.Append("SELECT COUNT(DISTINCT song_id) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
+            cmd.Append("SELECT COUNT(*) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) AND song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
             var mostListenedSongCount = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
             return new Tuple<SongBasicDetails, decimal>(mostPlayedSong, (decimal)mostListenedSongCount / totalSongs);
         }
@@ -62,21 +62,20 @@ namespace TechTitans.Repositories
         public Tuple<string, decimal> GetMostPlayedArtistPercentile(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT artist FROM SongBasicDetails WHERE song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
-            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { userId }).FirstOrDefault();
+            cmd.Append("SELECT TOP 1 sd.artist_id, COUNT(*) AS start_listen_events FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sd ON ub.song_id = sd.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY sd.artist_id ORDER BY COUNT(*) DESC;");
+            var response = _connection.Query<MostPlayedArtistInfo>(cmd.ToString(), new { userId }).FirstOrDefault();
+            var mostPlayedArtist = _connection.Query<string>(cmd.ToString(), new { response.ArtistId }).FirstOrDefault();
             cmd.Clear();
-            cmd.Append("SELECT COUNT(DISTINCT song_id) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2;");
+            cmd.Append("SELECT COUNT(*) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE());");
             var totalSongs = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
             cmd.Clear();
-            cmd.Append("SELECT COUNT(DISTINCT song_id) FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND song_id IN (SELECT TOP 1 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
-            var mostListenedSongCount = _connection.Query<int>(cmd.ToString(), new { userId }).FirstOrDefault();
-            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)mostListenedSongCount / totalSongs);
+            return new Tuple<string, decimal>(mostPlayedArtist, (decimal)response.StartListenEvents / totalSongs);
         }
 
         public List<string> GetTop5Genres(int userId)
         {
             var cmd = new StringBuilder();
-            cmd.Append("SELECT genre FROM SongBasicDetails WHERE song_id IN (SELECT TOP 5 song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 GROUP BY song_id ORDER BY COUNT(song_id) DESC);");
+            cmd.Append("SELECT TOP 5 sb.genre FROM UserPlaybackBehaviour ub JOIN SongBasicDetails sb ON ub.song_id = sb.song_id WHERE ub.user_id = @userId AND ub.event_type = 2 AND YEAR(ub.timestamp) = YEAR(GETDATE()) GROUP BY sb.genre ORDER BY total_start_listen_events DESC;");
             return _connection.Query<string>(cmd.ToString(), new { userId }).ToList();
         }
 
@@ -88,7 +87,7 @@ namespace TechTitans.Repositories
 
             //select all genres that have been played in current year but not in previous year
             var cmd = new StringBuilder();
-            cmd.Append("SELECT genre FROM SongBasicDetails WHERE song_id IN (SELECT song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY song_id) AND genre NOT IN (SELECT genre FROM SongBasicDetails WHERE song_id IN (SELECT song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) - 1 GROUP BY song_id;");
+            cmd.Append("SELECT genre FROM SongBasicDetails WHERE song_id IN (SELECT song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) GROUP BY song_id) AND genre NOT IN (SELECT genre FROM SongBasicDetails WHERE song_id IN (SELECT song_id FROM UserPlaybackBehaviour WHERE user_id = @userId AND event_type = 2 AND YEAR(timestamp) = YEAR(GETDATE()) - 1 GROUP BY song_id));");
             return _connection.Query<string>(cmd.ToString(), new { userId }).ToList();
         }
     }
