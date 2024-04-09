@@ -13,13 +13,13 @@ namespace TechTitans.Repositories
     {
             public SongBasicInfo SongBasicDetailsToSongBasicInfo(SongBasicDetails songBasicDetails)
             {
-                var artistId = songBasicDetails.Artist_Id;
+                var artistId = songBasicDetails.ArtistId;
                 var cmd = new StringBuilder();
                 cmd.Append("SELECT name FROM AuthorDetails WHERE artist_id = @artistId");
                 var artistName = _connection.Query<string>(cmd.ToString(), new { artistId }).FirstOrDefault();
                 return new SongBasicInfo
                 {
-                    SongId = songBasicDetails.Song_Id,
+                    SongId = songBasicDetails.SongId,
                     Name = songBasicDetails.Name,
                     Genre = songBasicDetails.Genre,
                     Subgenre = songBasicDetails.Subgenre,
