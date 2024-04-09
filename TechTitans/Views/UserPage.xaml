@@ -12,11 +12,14 @@
         <VerticalStackLayout>
             <custom_user:SearchSongsButton/>
             <Label 
-        Text="Your Most Listened Songs"
-        VerticalOptions="Center" 
-        HorizontalOptions="Start" 
-        Margin="10,0,0,0"
+                Text="Your Most Listened Songs"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold"
+                FontSize="16"
+                Margin="10,0,0,0"
             />
+            <BoxView Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10,5" />
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsGrid">
                     <Grid.ColumnDefinitions>
@@ -26,11 +29,14 @@
                 </Grid>
             </VerticalStackLayout>
             <Label 
-        Text="Recommended Songs"
-        VerticalOptions="Center" 
-        HorizontalOptions="Start" 
-        Margin="10,0,0,0"
+                Text="Recommended Songs"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold"
+                FontSize="16"
+                Margin="10,0,0,0"
             />
+            <BoxView Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10,5"/>
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsRecommandationGrid">
                     <Grid.ColumnDefinitions>
@@ -40,11 +46,14 @@
                 </Grid>
             </VerticalStackLayout>
             <Label 
-            Text="Advertised Songs"
-            VerticalOptions="Center" 
-            HorizontalOptions="Start" 
-            Margin="10,0,0,0"
-                />
+                Text="Advertised Songs"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                FontAttributes="Bold"
+                FontSize="16"
+                Margin="10,0,0,0"
+            />
+            <BoxView Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10,5"/>
             <VerticalStackLayout Spacing="15" Padding="10, 0">
                 <Grid x:Name="SongsAdvertisedGrid">
                     <Grid.ColumnDefinitions>

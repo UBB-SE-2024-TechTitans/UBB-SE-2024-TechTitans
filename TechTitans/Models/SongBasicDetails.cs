@@ -13,30 +13,30 @@ namespace TechTitans.Models
     {
         [Key]
         [Column("song_id")]
-        public int Song_Id { get; set; }
+        public int SongId { get; set; } = 0;
 
         [Column("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "DefaultName";
 
         [Column("genre")]
-        public string Genre { get; set; }
+        public string Genre { get; set; } = "DefaultGenre";
 
         [Column("subgenre")]
-        public string Subgenre { get; set; }
+        public string Subgenre { get; set; } = "DefaultSubgenre";
 
         [Column("artist_id")]
-        public int Artist_Id { get; set; }
+        public int ArtistId { get; set; } = 0;
 
         [Column("language")]
-        public string Language { get; set; }
+        public string Language { get; set; } = "DefaultLanguage";
 
         [Column("country")]
-        public string Country { get; set; }
+        public string Country { get; set; } = "DefaultCountry";
 
         [Column("album")]
-        public string Album { get; set; }
+        public string Album { get; set; } = "DefaultAlbum";
 
         [Column("image")]
-        public string Image { get; set; }
+        public string Image { get; set; } = "song_img_default.png";
     }
 }

@@ -4,20 +4,111 @@
              xmlns:custom="clr-namespace:TechTitans.Views.Components"
              x:Class="TechTitans.Views.Components.Artist.ArtistSongDashboard"
              Title="Song Dashboard">
+
     <VerticalStackLayout>
-        <Image 
-            x:Name="SongImage"
-            HorizontalOptions="Start"
-        />
-        <Label 
-            x:Name="SongTitle"
-            Text=""
-            HorizontalOptions="Start"
-        />
-        <Label
-            x:Name="SongArtist"
-            Text=""
-            HorizontalOptions="Start"
-        />
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Image 
+                x:Name="SongImage"
+                HorizontalOptions="Start"
+                HeightRequest="256"
+                WidthRequest="256"
+            />
+            <Label 
+                x:Name="SongTitle"
+                Text=""
+                FontSize="32"
+                FontAttributes="Bold"
+                WidthRequest="256"
+                HorizontalOptions="Start"
+            />
+            <Label
+                x:Name="SongArtist"
+                Text=""
+                FontSize="20"
+                TextColor="#6E6E6E"
+                Margin="0,-10,0,0"
+                HorizontalOptions="Start"
+            />
+            <Label
+                x:Name="SongAlbum"
+                Text=""
+                FontSize="24"
+                HorizontalOptions="Start"
+            />
+        </VerticalStackLayout>
+        <!--linie f ghetto-->
+        <BoxView Color="Gray" HeightRequest="2" HorizontalOptions="FillAndExpand" Margin="10, 5" />
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+            <VerticalStackLayout>
+                <Button
+                    Text="Info"
+                    Style="{StaticResource TabNavButton}"
+                    Clicked="OnInfoClick"
+                />
+                <BoxView x:Name="InfoBoxView" Color="#6E6E6E" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout>
+                <Button
+                    Text="Performance"
+                    Style="{StaticResource TabNavButton}"
+                    Clicked="OnPerformanceCLick"
+                />
+                <BoxView x:Name="PerformanceBoxView" Color="#1E1E1E" HeightRequest="2" HorizontalOptions="FillAndExpand"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+        <Frame
+            CornerRadius="10"
+            Margin="20,20,20,0"
+            Padding="10"
+            BackgroundColor="#6E6E6E"
+        >
+            <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+                <VerticalStackLayout Spacing="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Label
+                        x:Name="label1"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="label2"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="label3"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="label4"
+                        Text=""
+                        FontSize="16"
+                    />
+                </VerticalStackLayout>
+                <VerticalStackLayout Spacing="20" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+                    <Label
+                        x:Name="content1"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="content2"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="content3"
+                        Text=""
+                        FontSize="16"
+                    />
+                    <Label
+                        x:Name="content4"
+                        Text=""
+                        FontSize="16"
+                    />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            
+        </Frame>
     </VerticalStackLayout>
 </ContentPage>
