@@ -12,6 +12,7 @@ namespace TechTitans.Services
         private Repository<SongBasicDetails> SongRepo = new Repository<SongBasicDetails>();
         private Repository<SongRecommendationDetails> SongRecommendationRepo= new Repository<SongRecommendationDetails>();
 
+
         public void getTop3Genres(int month,int year) {
             Dictionary<String, int> genreCount = new Dictionary<String, int>();
             foreach (SongBasicDetails song in SongRepo.GetAll()) { 
