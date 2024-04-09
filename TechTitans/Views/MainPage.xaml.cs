@@ -5,7 +5,7 @@ namespace TechTitans.Views;
 
 public partial class MainPage : ContentPage
 {
-  /*  int count = 0;
+    int count = 0;
     public TestRepository Repository { get; set; }
     public TestDemographicDetails RepositoryDemographic { get; set; }
     public TestAuthorDetails RepositoryAuthorDetails { get; set; }
@@ -14,7 +14,7 @@ public partial class MainPage : ContentPage
     public TestUserPlaybackBehaviour RepositoryUserPlaybackBehaviour { get; set; }
     public TestAdDistributionData RepositoryAdDistributionData { get; set; }
     public TestSongRecommendationDetails RepositorySongRecommendationDetails { get; set; }
-    public TestSongFeatures RepositorySongFeatures { get; set; }*/
+    public TestSongFeatures RepositorySongFeatures { get; set; }
     // public TestRepositoryDemographic Repository { get; set; }
 
     public MainPage()
@@ -73,5 +73,3 @@ public partial class MainPage : ContentPage
     private void OnAnalystClicked(object sender, EventArgs e) => Navigation.PushAsync(new AnalystPage());
     private void OnEndOfYearRecapClicked(object sender, EventArgs e) => Navigation.PushAsync(new EndOfYearRecap());
 }
-
-

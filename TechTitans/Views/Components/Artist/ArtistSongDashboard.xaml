@@ -5,6 +5,10 @@
              x:Class="TechTitans.Views.Components.Artist.ArtistSongDashboard"
              Title="Song Dashboard">
     <VerticalStackLayout>
+        <Image 
+            x:Name="SongImage"
+            HorizontalOptions="Start"
+        />
         <Label 
             x:Name="SongTitle"
             Text=""
