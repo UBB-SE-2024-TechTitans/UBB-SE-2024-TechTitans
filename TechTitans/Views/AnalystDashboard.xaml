@@ -5,7 +5,7 @@
              Title="AnalystDashboard">
     <VerticalStackLayout>
         <Label 
-            Text="Dashboard"
+            Text="Dashboard for current month"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <VerticalStackLayout Spacing="15" Padding="10, 0">

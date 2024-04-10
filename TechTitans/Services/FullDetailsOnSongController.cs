@@ -59,13 +59,15 @@ namespace TechTitans.Services
         }
         public FullDetailsOnSong GetCurrentMonthDetails(int songId) {
             FullDetailsOnSong currentSongDetails = new();
+            DateTime start = new();
             foreach (UserPlaybackBehaviour action in UserPlaybackBehaviourRepo.GetAll()) {
                 if (action.Song_Id == songId && action.Timestamp.Month == DateTime.Now.Month && action.Timestamp.Year == DateTime.Now.Year) {
                     switch (action.Event_Type) {
                         case PlaybackEventType.start_play:
+                            start = action.Timestamp;
                             break;
                         case PlaybackEventType.end_play:
-                            int minutes = (action.Timestamp - DateTime.Now).Minutes;
+                            int minutes = (action.Timestamp - start).Minutes;
                             currentSongDetails.TotalMinutesListened += minutes;
                             currentSongDetails.TotalPlays++;
                             break;
