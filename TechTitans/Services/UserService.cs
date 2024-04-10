@@ -19,7 +19,7 @@ namespace TechTitans.Services
                 SongBasicInfo song_info = SongRepo.SongBasicDetailsToSongBasicInfo(song);
                 list_song.Add(song_info);
             }
-            return list_song;
+            return list_song.Take(6).ToList();
         }
     }
 }
