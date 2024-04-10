@@ -11,6 +11,6 @@ public partial class AnalystDashboard : ContentPage
         FullDetailsOnSongController fullDetailsOnSongController = new FullDetailsOnSongController();
         FullDetailsOnSong FullDetails = fullDetailsOnSongController.GetFullDetailsOnSong(201);
         FullDetailsOnSong CurrentMonth = fullDetailsOnSongController.GetCurrentMonthDetails(201);
-        this.BindingContext = CurrentMonth;
+        this.BindingContext = FullDetails;
     }
 }

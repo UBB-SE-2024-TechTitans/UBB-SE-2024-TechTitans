@@ -43,6 +43,12 @@
                 Clicked="OnEndOfYearRecapClicked"
                 HorizontalOptions="Fill"
             />
+            <Button
+                x:Name="AnalystDashboard"
+                Text="Dashboard"
+                Clicked="OnAnalystDashboardClicked"
+                HorizontalOptions="Fill"
+            />
         </VerticalStackLayout>
     </ScrollView>
 
