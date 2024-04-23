@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace TechTitans.Models
 {
+    /// <summary>
+    /// Represents information used for testing the functionalities of the program.
+    /// </summary>
     [Table("Test")]
     public class Test
     {

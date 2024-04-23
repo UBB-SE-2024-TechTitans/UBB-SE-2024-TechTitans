@@ -2,57 +2,55 @@
 using TechTitans.ViewModels;
 namespace TechTitans.Views.Components.User
 {
-    public partial class UserSongDashboard : ContentPage 
+    public partial class UserSongDashboard : ContentPage
     {
         // alt domain song type cu mai multe detalii
-        int songId;
-        ArtistSongDashboardViewModel viewModel;
-        public UserSongDashboard(SongBasicInfo song)
+        public int SongId;
+        public ArtistSongDashboardViewModel ViewModel;
+        public UserSongDashboard(SongBasicInformation song)
         {
             // song = service.GetSongById(songId);
-            songId = song.SongId;
+            SongId = song.SongId;
             InitializeComponent();
-            populateViewModel();
+            PopulateViewModel();
             LoadPage();
         }
 
-        private void populateViewModel()
+        private void PopulateViewModel()
         {
             // viewModel = getArtistSongDashboardModel(int sondId)
-            viewModel = getMockedViewModel();
-
+            ViewModel = GetMockedViewModel();
         }
-
         private void LoadPage()
         {
-            SongImage.Source = viewModel.SongInfo.Image;
-            SongTitle.Text = viewModel.SongInfo.Name;
-            SongArtist.Text = "by " + viewModel.ArtistInfo.Name;
-            SongAlbum.Text = "from " + viewModel.SongInfo.Album;
+            SongImage.Source = ViewModel.SongInfo.Image;
+            SongTitle.Text = ViewModel.SongInfo.Name;
+            SongArtist.Text = "by " + ViewModel.ArtistInfo.Name;
+            SongAlbum.Text = "from " + ViewModel.SongInfo.Album;
 
             // set song info panel
             label1.Text = "Genre:";
-            content1.Text = viewModel.SongInfo.Genre;
+            content1.Text = ViewModel.SongInfo.Genre;
             label2.Text = "Subgenre:";
-            content2.Text = viewModel.SongInfo.Subgenre;
+            content2.Text = ViewModel.SongInfo.Subgenre;
             label3.Text = "Country:";
-            content3.Text = viewModel.SongInfo.Country;
+            content3.Text = ViewModel.SongInfo.Country;
             label4.Text = "Language:";
-            content4.Text = viewModel.SongInfo.Language;
+            content4.Text = ViewModel.SongInfo.Language;
         }
 
-        private SongBasicInfo getMockedSong()
+        private SongBasicInformation GetMockedSong()
         {
-            return new SongBasicInfo();
+            return new SongBasicInformation();
         }
 
-        private ArtistSongDashboardViewModel getMockedViewModel()
+        private ArtistSongDashboardViewModel GetMockedViewModel()
         {
             var mockedModel = new ArtistSongDashboardViewModel()
             {
-                SongInfo = new SongBasicInfo(),
+                SongInfo = new SongBasicInformation(),
                 SongDetails = new SongRecommendationDetails(),
-                ArtistInfo = new AuthorDetails(),
+                ArtistInfo = new ArtistDetails(),
             };
             return mockedModel;
         }
@@ -60,13 +58,13 @@ namespace TechTitans.Views.Components.User
         {
             InfoBoxView.Color = Color.FromArgb("#6E6E6E");
             label1.Text = "Genre:";
-            content1.Text = viewModel.SongInfo.Genre;
+            content1.Text = ViewModel.SongInfo.Genre;
             label2.Text = "Subgenre:";
-            content2.Text = viewModel.SongInfo.Subgenre;
+            content2.Text = ViewModel.SongInfo.Subgenre;
             label3.Text = "Country:";
-            content3.Text = viewModel.SongInfo.Country;
+            content3.Text = ViewModel.SongInfo.Country;
             label4.Text = "Language:";
-            content4.Text = viewModel.SongInfo.Language;
+            content4.Text = ViewModel.SongInfo.Language;
         }
     }
 }

@@ -1,11 +1,14 @@
 namespace TechTitans.Enums
 {
+    /// <summary>
+    /// Represents different types of playback events.
+    /// </summary>
     public enum PlaybackEventType
     {
-        like = 1,
-        start_play = 2,
-        end_play = 3,
-        dislike = 4,
-        skip = 5
+        Like = 1,
+        StartSongPlayback = 2,
+        EndSongPlayback = 3,
+        Dislike = 4,
+        Skip = 5
     }
 }

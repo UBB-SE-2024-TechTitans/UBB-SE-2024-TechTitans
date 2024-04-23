@@ -7,6 +7,5 @@ public partial class BackHomeButton : ContentView
         InitializeComponent();
 	}
 
-	private void OnBackClick(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new MainPage());
-
+    private void OnBackClick(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new MainPage());
 }
