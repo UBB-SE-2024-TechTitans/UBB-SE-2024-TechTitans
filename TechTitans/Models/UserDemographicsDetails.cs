@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace TechTitans.Models
 {
+    /// <summary>
+    /// Represents demographic information stored in the database about a user,
+    /// including their unique identifier, name, gender, date of birth, country,
+    /// language, race, and whether they are a premium user.
+    /// </summary>
     [Table("UserDemographicsDetails")]
     public class UserDemographicsDetails
     {

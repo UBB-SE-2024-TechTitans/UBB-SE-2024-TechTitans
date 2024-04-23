@@ -5,7 +5,7 @@ namespace TechTitans.Views;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
+    private int count = 0;
     public TestRepository Repository { get; set; }
     public TestDemographicDetails RepositoryDemographic { get; set; }
     public TestAuthorDetails RepositoryAuthorDetails { get; set; }
@@ -16,22 +16,21 @@ public partial class MainPage : ContentPage
     public TestSongRecommendationDetails RepositorySongRecommendationDetails { get; set; }
     public TestSongFeatures RepositorySongFeatures { get; set; }
     // public TestRepositoryDemographic Repository { get; set; }
-
     public MainPage()
     {
         InitializeComponent();
-        //Repository = new TestRepository();
-        //var dbData = Repository.TestMethod();
-        //TestId.Text = dbData.Id.ToString();
-        //TestName.Text = dbData.Name;
+        // Repository = new TestRepository();
+        // var dbData = Repository.TestMethod();
+        // TestId.Text = dbData.Id.ToString();
+        // TestName.Text = dbData.Name;
 
         // RepositoryDemographic = new TestDemographicDetails();
         // var dbDataDemographic = RepositoryDemographic.TestMethod();
         // TestId.Text = dbDataDemographic.UserId.ToString();
         // TestName.Text = dbDataDemographic.Name;
 
-        //RepositoryAuthorDetails = new TestAuthorDetails();
-        //var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
+        // RepositoryAuthorDetails = new TestAuthorDetails();
+        // var dbDataAuthorDetails = RepositoryAuthorDetails.TestMethod();
 
         // RepositorySongBasicDetails = new TestSongBasicDetails();
         // var dbDataSongBasicDetails = RepositorySongBasicDetails.TestMethod();
@@ -62,8 +61,6 @@ public partial class MainPage : ContentPage
         // var dbDataSongFeatures = RepositorySongFeatures.TestMethod();
         // TestId.Text = dbDataSongFeatures.SongId.ToString();
         // TestName.Text = dbDataSongFeatures.ArtistId.ToString();
-
-
     }
 
     private void OnUserCLicked(object sender, EventArgs e) => Navigation.PushAsync(new UserPage());

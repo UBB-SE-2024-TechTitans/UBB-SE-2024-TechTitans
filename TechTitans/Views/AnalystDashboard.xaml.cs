@@ -1,6 +1,6 @@
 using TechTitans.Models;
 using TechTitans.Services;
-//using System.IO;
+// using System.IO;
 namespace TechTitans.Views;
 
 public partial class AnalystDashboard : ContentPage
@@ -9,8 +9,8 @@ public partial class AnalystDashboard : ContentPage
 	{
 		InitializeComponent();
         FullDetailsOnSongController fullDetailsOnSongController = new FullDetailsOnSongController();
-        FullDetailsOnSong FullDetails = fullDetailsOnSongController.GetFullDetailsOnSong(201);
-        FullDetailsOnSong CurrentMonth = fullDetailsOnSongController.GetCurrentMonthDetails(201);
-        this.BindingContext = CurrentMonth;
+        FullDetailsOnSong fullDetails = fullDetailsOnSongController.GetFullDetailsOnSong(201);
+        FullDetailsOnSong currentMonth = fullDetailsOnSongController.GetCurrentMonthDetails(201);
+        this.BindingContext = currentMonth;
     }
 }
