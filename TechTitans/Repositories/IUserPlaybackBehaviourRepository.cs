@@ -9,7 +9,6 @@ namespace TechTitans.Repositories
 {
     internal interface IUserPlaybackBehaviourRepository
     {
-
         UserPlaybackBehaviour GetUserPlaybackBehaviour(int userId, int? songId = null, DateTime? timestamp = null);
         List<UserPlaybackBehaviour> GetUserPlaybackBehaviour(int userId);
     }

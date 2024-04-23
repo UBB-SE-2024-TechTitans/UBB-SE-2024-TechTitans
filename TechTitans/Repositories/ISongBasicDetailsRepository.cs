@@ -23,6 +23,5 @@ namespace TechTitans.Repositories
         List<string> GetTop5Genres(int userId);
 
         List<string> GetAllNewGenresDiscovered(int userId);
-
     }
 }
