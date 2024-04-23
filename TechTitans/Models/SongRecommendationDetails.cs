@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace TechTitans.Models
 {
+    /// <summary>
+    /// Represents information about song recommendations stored in the database,
+    /// including likes, dislikes, minutes listened, number of plays,
+    /// and the time period.
+    /// </summary>
     [Table("SongRecommendationDetails")]
     public class SongRecommendationDetails
     {

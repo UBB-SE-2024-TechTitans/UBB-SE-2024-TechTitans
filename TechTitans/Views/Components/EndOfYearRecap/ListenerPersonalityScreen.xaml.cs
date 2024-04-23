@@ -6,10 +6,10 @@ namespace TechTitans.Views.Components.EndOfYearRecap;
 public partial class ListenerPersonalityScreen : ContentView
 {
 	public EndOfYearRecapViewModel ViewModel { get; set; }
-	public ListenerPersonalityScreen(EndOfYearRecapViewModel _viewModel)
+	public ListenerPersonalityScreen(EndOfYearRecapViewModel viewModel)
 	{
 		InitializeComponent();
-		ViewModel = _viewModel;
+		ViewModel = viewModel;
 		switch (ViewModel.ListenerPersonality)
 		{
 			case ListenerPersonality.Vanilla:

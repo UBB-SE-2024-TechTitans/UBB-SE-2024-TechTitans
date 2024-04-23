@@ -4,7 +4,7 @@ namespace TechTitans.Views.Components;
 
 public partial class SongItem : ContentView
 {
-    public SongBasicInfo mockSong = new()
+    public SongBasicInformation MockSong = new ()
     {
         SongId = 1,
         Name = "Roma",
@@ -21,8 +21,9 @@ public partial class SongItem : ContentView
     public SongItem()
 	{
         if (BindingContext == null)
-            BindingContext = mockSong; 
-
+        {
+            BindingContext = MockSong;
+        }
 		InitializeComponent();
 	}
 }

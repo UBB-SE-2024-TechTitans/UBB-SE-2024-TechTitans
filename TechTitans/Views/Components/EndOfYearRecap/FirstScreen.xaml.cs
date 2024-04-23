@@ -39,6 +39,5 @@ public partial class FirstScreen : ContentView
         GenericImage.Source = imagesource;
         Background.BackgroundColor = new Color(10, 20, 200);
         ChangeImageAndBackgraound();
-
     }
 }
